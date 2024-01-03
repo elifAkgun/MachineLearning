@@ -1,7 +1,3 @@
-```python
-# iloc_metodu_dokumantasyonu.py
-
-"""
 # `iloc` Metodu
 
 **Açıklama:**
@@ -42,6 +38,4 @@ df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
 
 # İlk satırın ve ikinci sütunun seçimi
 print(df.iloc[0, 1])
-```
-"""
 ```

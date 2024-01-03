@@ -11,6 +11,9 @@ Y = dataset.iloc[:,-1]
 print(X) 
 
 print('#######') 
+print('#######') 
+print('#######') 
+
 #missing data modification
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
@@ -19,3 +22,22 @@ X.iloc[:, 1:3] = imputer.transform(X.iloc[:, 1:3])  # iloc kullanımı ve [:, 1:
 
 #print converted data
 print(X) 
+
+print('#######') 
+print('#######') 
+print('#######') 
+
+# encode data
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.pipeline import make_pipeline
+
+ct = ColumnTransformer(
+        transformers = [('encoder', OneHotEncoder(), [0])],
+        remainder='passthrough'
+        )
+X = np.array(ct.fit_transform(X))
+
+print(X)
+
+
